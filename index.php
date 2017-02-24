@@ -45,7 +45,7 @@
                 echo '<p class="err">Login details incorrect</p>';
               }else if($result->num_rows == 1){
                 echo '<p class="err">login succesful</p>';
-                $_SESSION['username'] = $username;
+                $_SESSION["username"] = $username;
                 header('Location: events.php');
               }
             }else{

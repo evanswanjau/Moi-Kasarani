@@ -61,3 +61,24 @@ input{
 .login_form a:hover{
   text-decoration: underline;
 }
+.event{
+  text-align: center;
+  padding:2%;
+  color:white;
+  border:5px dashed #0bc28c;
+  margin:3%;
+}
+.event h1{
+  text-transform: capitalize;
+}
+.event button{
+  background-color:#0bc28c;
+  border:2px solid #0bc28c;
+  padding-top:1%;
+  padding-bottom:1%;
+  padding-left:5%;
+  padding-right:5%;
+  border-radius:3px;
+  cursor:pointer;
+  color:white;
+}

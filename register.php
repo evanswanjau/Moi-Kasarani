@@ -1,5 +1,6 @@
 <?php
   //Importing the database connection
+  session_start();
   require 'connection.php';
  ?>
 <!DOCTYPE html>
@@ -61,7 +62,8 @@
             //if the query is true return the success notification
             if ($conn->query($sql) === TRUE) {
               echo '<p class="success">You have been registered successfully</p>';
-              header('Location: index.php');
+              $_SESSION["username"] = $username;
+              header('Location: events.php');
             }else{
               //else if the query is not true return an sql error
               $errors[] = "Error: " . $sql . "<br>" . $conn->error;

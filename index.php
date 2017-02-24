@@ -30,7 +30,7 @@
             if(!empty($_POST['username']) && !empty($_POST['password'])){
               //If the inputs are not empty we assign the variables with the inputs given
               $username = $_POST['username'];
-              $password = $_POST['password'];
+              $password = sha1($_POST['password']);
             }else {
               //Error if the inputs are empty
               $errors[] = '<p class="err">You need to input both values</p>';

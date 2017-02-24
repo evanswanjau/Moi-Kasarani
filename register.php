@@ -42,7 +42,7 @@
 
             //Check whether the passwords are similar
             if($password === $password2){
-              $password = $password;
+              $password = sha1($password);
             }else {
               //Add the error in the errors array if passwords are not similar
               $errors[] = '<p class="err">Passwords are not similar</p>';

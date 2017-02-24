@@ -1,0 +1,63 @@
+/*This is the css file that consists of the styling code*/
+
+/*First we give default values to the body*/
+body{
+  padding:0px;
+  margin:0px;
+  font:14px century gothic;
+}
+h3, h2{
+  padding:1%;
+  color:white;
+}
+/*All the div tags with the classes container will get these properties*/
+.container{
+  padding:5%;
+  background-color:#0bc28c;
+  height:100vh;
+  text-align: center;
+}
+/*The form properties*/
+input{
+  background-color:transparent;
+  border-radius:4px;
+  border:2px solid white;
+  margin:1%;
+  width:20%;
+  color:white;
+  padding:1%;
+}
+.button{
+  background-color:white;
+  cursor:pointer;
+  color:black;
+}
+/*This is the errors properties*/
+.err{
+  background-color:rgba(255, 0, 0, .8);
+  color:white;
+  border-radius:5px;
+  width:30%;
+  margin: auto;
+  padding:1%;
+}
+/*Success style properties*/
+.success{
+  background-color:white;
+  color:#0bc28c;
+  border-radius:5px;
+  width:30%;
+  margin: auto;
+  padding:1%;
+}
+/*login form properties*/
+.login_form{
+  padding-top:10%;
+}
+.login_form a{
+  color:white;
+  text-decoration: none;
+}
+.login_form a:hover{
+  text-decoration: underline;
+}

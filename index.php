@@ -1,4 +1,5 @@
 <?php
+  session_start();
   //Importing the database connection
   require 'connection.php';
  ?>
@@ -24,7 +25,7 @@
           <a class="link" href="register.php">Not yet registered?</a><br><br>
         </form>
         <?php
-        //This will only ha[[en when the submit button is clicked
+        //This will only happen when the submit button is clicked
           if(isset($_POST['submit'])){
             //This then creates the array for the errors that we are going to append(add) to it
             $errors = array();
@@ -42,15 +43,17 @@
               //Select the data with the specific username and check whether the data is the same with the input given
               $query = "SELECT username FROM users WHERE username = '$username' AND password = '$password'";
               $result = $conn->query($query);
-
+              //If the number of rows returned is less than one that means the user doesn't exist or has put incorrect details
               if($result->num_rows < 1){
                 echo '<p class="err">Login details incorrect</p>';
               }else if($result->num_rows == 1){
-                echo '<p class="err">login succesful</p>';
+                //If its equal to one then the details are correct
+                echo '<p class="err">login successful</p>';
                 $_SESSION["username"] = $username;
                 header('Location: events.php');
               }
             }else{
+              //Using foreach function to echo out the errors
              foreach ($errors as $error) {
                echo $error;
              }

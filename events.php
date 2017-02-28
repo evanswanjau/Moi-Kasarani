@@ -12,6 +12,21 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <div class="menu">
+      <ul>
+        <a href="upload.php"><li>Upload Event</li></a>
+        <form action="" method="post">
+          <button type="submit" name="logout">Logout</button>
+        </form>
+        <?php
+          if(isset($_POST['logout'])){
+            session_destroy();
+            header("Location: index.php");
+          }
+         ?>
+      </ul>
+    </div>
+    <?php echo 'Welcome ' . $_SESSION['username'] ?>
     <div class="events container-fluid">
       <div class="row">
         <?php

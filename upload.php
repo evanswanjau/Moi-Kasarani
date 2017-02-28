@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <div class="menu">
+      <ul>
+        <a href="events.php"><li>View Events</li></a>
+        <form action="" method="post">
+          <button type="submit" name="logout">Logout</button>
+        </form>
+        <?php
+          if(isset($_POST['logout'])){
+            session_destroy();
+            header("Location: index.php");
+          }
+         ?>
+      </ul>
+    </div>
     <div class="container" style="background-color:#727272">
       <form class="upload_form" action="" method="post">
         <input type="text" name="event" placeholder="Event Name*"><br>

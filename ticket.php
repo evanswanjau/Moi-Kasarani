@@ -9,6 +9,21 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body style="background-color:grey">
+    <div class="menu">
+      <ul>
+        <a href="events.php"><li>View Events</li></a>
+        <a href="upload.php"><li>Upload Event</li></a>
+        <form action="" method="post">
+          <button class='button' type="submit" name="logout">Logout</button>
+        </form>
+        <?php
+          if(isset($_POST['logout'])){
+            session_destroy();
+            header("Location: index.php");
+          }
+         ?>
+      </ul>
+    </div>
     <?php
       if(isset($_GET['ticket'])){
         $id = intval($_GET['ticket']);

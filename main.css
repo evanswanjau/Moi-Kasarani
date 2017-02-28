@@ -6,9 +6,14 @@ body{
   margin:0px;
   font:14px century gothic;
 }
+/*ALl headers with the following tags have the same properties*/
 h3, h2{
   padding:1%;
   color:white;
+}
+.menu form{
+  float:right;
+  width:20%;
 }
 /*All the div tags with the classes container will get these properties*/
 .container{
@@ -18,6 +23,7 @@ h3, h2{
   text-align: center;
 }
 /*The form properties*/
+/*The input styling*/
 input{
   background-color:transparent;
   border-radius:4px;
@@ -27,12 +33,13 @@ input{
   color:white;
   padding:1%;
 }
+/*The input styling mostly for submit buttons*/
 .button{
   background-color:white;
   cursor:pointer;
   color:black;
 }
-/*This is the errors properties*/
+/*This is the errors' properties*/
 .err{
   background-color:rgba(255, 0, 0, .8);
   color:white;
@@ -51,13 +58,16 @@ input{
   padding:1%;
 }
 /*login form properties*/
+/*Link style*/
 .container a{
   color:white;
   text-decoration: none;
 }
+/*link style on hover*/
 .container a:hover{
   text-decoration: underline;
 }
+/*Styling for division that holds the event details in place*/
 .event{
   text-align: center;
   padding:2%;
@@ -65,9 +75,11 @@ input{
   border:5px dashed #0bc28c;
   margin:3%;
 }
+/*The event header must be capitalized*/
 .event h1{
   text-transform: capitalize;
 }
+/*Event button that submits to the ticket page*/
 .event button{
   background-color:#0bc28c;
   border:2px solid #0bc28c;

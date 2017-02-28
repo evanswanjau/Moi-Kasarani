@@ -12,29 +12,37 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <!--Here the menu html code-->
     <div class="menu">
       <ul>
         <a href="upload.php"><li>Upload Event</li></a>
+        <!--Logout button-->
         <form action="" method="post">
           <button type="submit" name="logout">Logout</button>
         </form>
         <?php
+        //When the user hits the logout button
           if(isset($_POST['logout'])){
+            //His session is destroyed
             session_destroy();
+            //And the website is redirected to the login page
             header("Location: index.php");
           }
          ?>
       </ul>
     </div>
+    <!--Welcome message when the user logs in-->
     <?php echo 'Welcome ' . $_SESSION['username'] ?>
     <div class="events container-fluid">
       <div class="row">
         <?php
+        //Selects all the fields from the events table by order of date from the closest date
           $sql = "SELECT * FROM events ORDER BY `startdate` DESC";
           $result = $conn->query($sql);
-
+          //If the number of rows is greater than zero. It means that data exists
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
+              //The data is displayed in html tags
               echo "<div class='event col-sm-3'>
                 <h1>". $row['eventname'] . "</h1>
                 <p><b>Regular:</b> " . $row['regular'] . "Ksh</p>
@@ -45,7 +53,7 @@
                 <input type='hidden' name='ticket' value=".$row['id']."'>
                 <button type='submit'>book ticket</button>
                 </form>
-                </div>";
+                </div>";//The form in the code above gets the event id to the ticket page
             }
           }
          ?>

@@ -13,13 +13,15 @@
   </head>
   <body>
     <div class="container">
+      <h2>Moi Kasarani Online Ticketing System</h2>
+      <h3>Login</h3>
       <!--Here is the login form-->
       <div class="login">
         <form class="login_form" action="" method="post"><br>
           <input type="text" name="username" placeholder="username"><br>
           <input type="password" name="password" placeholder="password"><br>
           <input class="button" type="submit" name="submit" value="Submit"><br>
-          <a href="register.php">Not yet registered?</a><br><br>
+          <a class="link" href="register.php">Not yet registered?</a><br><br>
         </form>
         <?php
         //This will only ha[[en when the submit button is clicked

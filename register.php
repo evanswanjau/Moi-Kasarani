@@ -22,7 +22,8 @@
         <input type="text" name="username" placeholder="username"><br>
         <input type="password" name="password" placeholder="password"><br>
         <input type="password" name="password2" placeholder="confirm password"><br>
-        <input class="button" type="submit" name="submit" value="Submit"><br><br>
+        <input class="button" type="submit" name="submit" value="Submit"><br>
+        <a class="link" href="index.php">Back to login</a><br><br>
       </form>
       <?php
         //This will only happen when the buttin is clicked

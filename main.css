@@ -51,20 +51,17 @@ input{
   padding:1%;
 }
 /*login form properties*/
-.login_form{
-  padding-top:10%;
-}
-.login_form a{
+.container a{
   color:white;
   text-decoration: none;
 }
-.login_form a:hover{
+.container a:hover{
   text-decoration: underline;
 }
 .event{
   text-align: center;
   padding:2%;
-  color:white;
+  color:black;
   border:5px dashed #0bc28c;
   margin:3%;
 }

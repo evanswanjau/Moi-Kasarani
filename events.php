@@ -7,11 +7,11 @@
 <!--Beginning of the tickets header-->
   <head>
     <meta charset="utf-8">
-    <title>Tickets | Moi Kasarani Ticket Booking System</title>
+    <title>Events | Moi Kasarani Ticket Booking System</title>
     <!--Link for CSS styling-->
     <link rel="stylesheet" href="main.css">
   </head>
-  <body style="background-color:black">
+  <body>
     <div class="events container-fluid">
       <div class="row">
         <?php
@@ -24,8 +24,12 @@
                 <h1>". $row['eventname'] . "</h1>
                 <p><b>Regular:</b> " . $row['regular'] . "Ksh</p>
                 <p><b>VIP:</b> " . $row['vip'] . "Ksh</p><br>
-                <p><b>" . $row['startdate'] . "</b></p><br><br>
-                <button class='button'>book</button>
+                <p><b>" . $row['startdate'] . "</b></p>
+                <p><b>Tickets remaining:<b>" . $row['tickets'] . "</p><br><br>
+                <form action='ticket.php' method = 'GET'>
+                <input type='hidden' name='ticket' value=".$row['id']."'>
+                <button type='submit'>book ticket</button>
+                </form>
                 </div>";
             }
           }

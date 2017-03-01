@@ -11,9 +11,25 @@ h3, h2{
   padding:1%;
   color:white;
 }
-.menu form{
+/*Menu logout code*/
+.menu input{
   float:right;
-  width:20%;
+  width:10%;
+  background-color:transparent;
+  color:white;
+}
+/*Menu list code*/
+.menu li{
+  list-style:none;
+}
+/*Menu code links*/
+.menu a{
+  text-decoration:none;
+  color:#0bc28c;
+}
+/*Link code on hover*/
+.menu a:hover{
+  color:white;
 }
 /*All the div tags with the classes container will get these properties*/
 .container{
@@ -32,6 +48,23 @@ input{
   width:20%;
   color:white;
   padding:1%;
+}
+/*Placeholder text color*/
+/*Placeholders complatible with different sites*/
+::-webkit-input-placeholder {
+   color: #d3d3d3;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #d3d3d3;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #d3d3d3;
+}
+
+:-ms-input-placeholder {
+   color: #d3d3d3;
 }
 /*The input styling mostly for submit buttons*/
 .button{
@@ -67,12 +100,21 @@ input{
 .container a:hover{
   text-decoration: underline;
 }
+/*Event page background styling*/
+.events{
+  background:url(concerts.jpg) no-repeat center center fixed;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  height:100%;
+  color:white;
+}
 /*Styling for division that holds the event details in place*/
 .event{
   text-align: center;
   padding:2%;
-  color:black;
-  border:5px dashed #0bc28c;
+  border:5px dashed #ffffff;
   margin:3%;
 }
 /*The event header must be capitalized*/

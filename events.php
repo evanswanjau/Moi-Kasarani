@@ -1,5 +1,8 @@
 <?php
   session_start();
+  if(!isset($_SESSION['username'])){
+    header('Location:index.php');
+  }
   require 'connection.php';
  ?>
 <!DOCTYPE html>
@@ -11,14 +14,14 @@
     <!--Link for CSS styling-->
     <link rel="stylesheet" href="main.css">
   </head>
-  <body>
+  <body class="events">
     <!--Here the menu html code-->
     <div class="menu">
       <ul>
         <a href="upload.php"><li>Upload Event</li></a>
         <!--Logout button-->
         <form action="" method="post">
-          <button type="submit" name="logout">Logout</button>
+          <input class="button" type="submit" name="logout" value="Logout">
         </form>
         <?php
         //When the user hits the logout button
@@ -32,8 +35,8 @@
       </ul>
     </div>
     <!--Welcome message when the user logs in-->
-    <?php echo 'Welcome ' . $_SESSION['username'] ?>
-    <div class="events container-fluid">
+    <?php echo "<p class='success' style='text-align: center; color:black;'>Welcome " . $_SESSION['username']. "</p>" ?>
+    <div class="container-fluid">
       <div class="row">
         <?php
         //Selects all the fields from the events table by order of date from the closest date

@@ -42,12 +42,18 @@
             $password = $_POST['password'];
             $password2 = $_POST['password2'];
 
-            //Check whether the passwords are similar
-            if($password === $password2){
-              $password = sha1($password);
+            //Check whether password is longer than 6 characters
+            $pass_length = strlen($password);
+            if($pass_length < 6){
+              $errors[] = "<p class='err'>Password length must be longer than 6 characters</p>";
             }else {
-              //Add the error in the errors array if passwords are not similar
-              $errors[] = '<p class="err">Passwords are not similar</p>';
+              //Check whether the passwords are similar
+              if($password === $password2){
+                $password = sha1($password);
+              }else {
+                //Add the error in the errors array if passwords are not similar
+                $errors[] =  '<p class="err">Passwords are not similar</p>';
+              }
             }
           }
           else {
@@ -64,7 +70,7 @@
             if ($conn->query($sql) === TRUE) {
               echo '<p class="success">You have been registered successfully</p>';
               $_SESSION["username"] = $username;
-              header('Location: events.php');
+              header('refresh:1; url=events.php');
             }else{
               //else if the query is not true return an sql error
               $errors[] = "Error: " . $sql . "<br>" . $conn->error;

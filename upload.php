@@ -1,5 +1,9 @@
 <?php
-  require 'connection.php'
+  session_start();
+  if(!isset($_SESSION['username'])){
+    header('Location:index.php');
+  }
+  require 'connection.php';
  ?>
 <!DOCTYPE html>
 <html>
@@ -10,14 +14,14 @@
     <!--Link for CSS styling-->
     <link rel="stylesheet" href="main.css">
   </head>
-  <body>
+  <body  style="background-color:#727272;">
     <!--Here the menu html code-->
     <div class="menu">
       <ul>
         <a href="events.php"><li>View Events</li></a>
         <!--Logout button-->
         <form action="" method="post">
-          <button type="submit" name="logout">Logout</button>
+            <input class="button" type="submit" name="logout" value="Logout">
         </form>
         <?php
         //When the user hits the logout button
@@ -31,7 +35,7 @@
       </ul>
     </div>
     <!--This is the upload form-->
-    <div class="container" style="background-color:#727272">
+    <div style="text-align:center; padding-top:5%;">
       <form class="upload_form" action="" method="post">
         <input type="text" name="event" placeholder="Event Name*"><br>
         <input type="text" name="rprice" placeholder="Regular Price*"><br>

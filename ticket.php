@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['username'])){
+  header('Location:index.php');
+}
 //Importing the database connection
   require 'connection.php';
  ?>
@@ -20,7 +23,7 @@ session_start();
         <a href="upload.php"><li>Upload Event</li></a>
         <!--Logout button-->
         <form action="" method="post">
-          <button class='button' type="submit" name="logout">Logout</button>
+            <input class="button" type="submit" name="logout" value="Logout">
         </form>
         <?php
         //When the user hits the logout button

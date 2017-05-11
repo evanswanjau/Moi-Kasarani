@@ -116,13 +116,6 @@ if(!isset($_SESSION['username'])){
                   He can print or keep it in his phone where he is going to display it at the entrance of the
                   gate.
                 */
-                /*
-                  # If anything doesn't make sense I'll be ready to answer anything
-                  # Delete these comments when you fully understand the project
-                  # I've tried my best to make this project and code as simple as possible
-                  # If you think I need to delete or add anything please dont hesitate to ask me
-                  # Otherwise... All the best in this project bro.
-                */
       }
 
     }

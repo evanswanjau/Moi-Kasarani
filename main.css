@@ -133,3 +133,13 @@ input{
   cursor:pointer;
   color:white;
 }
+/*Admin page css*/
+.userdata{
+  color:white;
+  text-align: left;
+}
+.userdata td{
+  text-align: center;
+  border:1px solid white;
+  width:auto;
+}

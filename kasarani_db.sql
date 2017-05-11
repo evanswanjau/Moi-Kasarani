@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2017 at 10:40 PM
+-- Generation Time: May 08, 2017 at 11:58 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -19,9 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `kasarani_db`
 --
-CREATE DATABASE kasarani_db;
-
-USE kasarani_db;
 
 -- --------------------------------------------------------
 
@@ -38,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `enddate` date NOT NULL,
   `tickets` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `events`
@@ -50,7 +47,8 @@ INSERT INTO `events` (`id`, `eventname`, `regular`, `vip`, `startdate`, `enddate
 (3, 'Groove Awards 2017', 1000, 2000, '2017-03-11', '2017-02-05', 8000),
 (6, 'Leavers Bash', 500, 1000, '2017-03-10', '0000-00-00', 3000),
 (7, 'New year kasarani party', 0, 0, '2017-12-31', '2018-01-01', 0),
-(8, 'Gor Mahia vs Afc Leopards', 300, 1000, '2017-02-01', '0000-00-00', 60000);
+(8, 'Gor Mahia vs Afc Leopards', 300, 1000, '2017-02-01', '0000-00-00', 60000),
+(9, 'Moi''s 100 years', 400, 800, '2017-03-23', '2017-03-23', 700);
 
 -- --------------------------------------------------------
 
@@ -66,18 +64,13 @@ CREATE TABLE IF NOT EXISTS `tickets` (
   `startdate` date NOT NULL,
   `code` varchar(12) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=68 ;
 
 --
 -- Dumping data for table `tickets`
 --
 
 INSERT INTO `tickets` (`id`, `eventname`, `category`, `price`, `startdate`, `code`) VALUES
-(1, 'Groove Awards 2017', '1000', 0, '2017-03-11', 'WN9DJ7LHS'),
-(2, 'Groove Awards 2017', '1000', 0, '2017-03-11', 'SU385E67T'),
-(3, 'Groove Awards 2017', '1000', 0, '2017-03-11', 'M6S5UXKR3'),
-(4, 'Safaricom Jazz', 'vip', 0, '2017-03-02', '2KPZMH497'),
-(5, 'Gor Mahia vs Afc Leopards', 'reg300', 0, '2017-02-01', '1YI6CALMH'),
 (6, 'Leavers Bash', 'VIP', 1000, '2017-03-10', 'NJMQ2OX4L'),
 (7, 'Groove Awards 2017', 'Regular', 1000, '2017-03-11', 'CH9FJDQM6'),
 (8, 'Groove Awards 2017', 'Regular', 1000, '2017-03-11', '497GWZ0HC'),
@@ -134,7 +127,12 @@ INSERT INTO `tickets` (`id`, `eventname`, `category`, `price`, `startdate`, `cod
 (59, 'Gor Mahia vs Afc Leopards', 'Regular', 300, '2017-02-01', '3EFCJLIQ8'),
 (60, 'Gor Mahia vs Afc Leopards', 'Regular', 300, '2017-02-01', '4PKEA3T91'),
 (61, 'Gor Mahia vs Afc Leopards', 'Regular', 300, '2017-02-01', 'BO57UETJM'),
-(62, 'Gor Mahia vs Afc Leopards', 'Regular', 300, '2017-02-01', 'IQ8B720JG');
+(62, 'Gor Mahia vs Afc Leopards', 'Regular', 300, '2017-02-01', 'IQ8B720JG'),
+(63, 'New year kasarani party', 'Regular', 0, '2017-12-31', 'WBS5L3EPM'),
+(64, 'New year kasarani party', 'Regular', 0, '2017-12-31', 'LCXAIYSOM'),
+(65, 'New year kasarani party', 'Regular', 0, '2017-12-31', 'J6GABZP42'),
+(66, 'New year kasarani party', 'Regular', 0, '2017-12-31', 'BUZT5J1CG'),
+(67, 'New year kasarani party', 'Regular', 0, '2017-12-31', 'Q3M0GI62E');
 
 -- --------------------------------------------------------
 
@@ -150,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `ticketid` int(5) NOT NULL,
   `ticketcode` varchar(37) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `users`
@@ -161,7 +159,20 @@ INSERT INTO `users` (`id`, `email`, `username`, `password`, `ticketid`, `ticketc
 (3, 'josephkanyirimuchiri@gmail.com', 'joekanyiri', '9d4e1e23bd5b727046a9e3b4b7db57bd8d6ee684', 0, ''),
 (4, 'rosemarymurugi@gmail.com', 'rosemary', '9d4e1e23bd5b727046a9e3b4b7db57bd8d6ee684', 0, ''),
 (5, 'kevin@gmail.com', 'kevin', 'eb74f2cb1a9d6a502e420f61c204e2c2cb3ec8a8', 0, ''),
-(6, 'kevinwanjau@gmail.com', 'kevinwanjau', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 0, '');
+(6, 'kevinwanjau@gmail.com', 'kevinwanjau', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 0, ''),
+(7, 'victor@gmail.com', 'victor', '9d4e1e23bd5b727046a9e3b4b7db57bd8d6ee684', 0, ''),
+(8, 'frank@gmail.com', 'frank', '12', 0, ''),
+(9, 'george@gmail.com', 'george', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 0, ''),
+(10, 'jane@gmail.com', 'jane', '2aa60a8ff7fcd473d321e0146afd9e26df395147', 0, ''),
+(11, 'codydevelopers@gmail.com', 'cody', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 0, ''),
+(12, 'wanjau@gmail.com', 'wanjau', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 0, ''),
+(13, 'was@gmail.com', 'was', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 0, ''),
+(14, 'peter@gmail.com', 'peter', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 0, ''),
+(15, 'robert@gmail.com', 'rebert', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 0, ''),
+(16, 'linus@gmail.com', 'linus', '20eabe5d64b0e216796e834f52d61fd0b70332fc', 0, ''),
+(17, 'admin@gmail.com', 'admin', 'admin123', 0, ''),
+(19, 'admin@gmail.com', 'admin', 'f865b53623b121fd34ee5426c792e5c33af8c227', 0, ''),
+(20, 'logan@gmail.com', 'logan', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 0, '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

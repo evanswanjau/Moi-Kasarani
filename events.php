@@ -19,6 +19,11 @@
     <div class="menu">
       <ul>
         <a href="upload.php"><li>Upload Event</li></a>
+        <?php
+          if($_SESSION['username'] == 'admin'){
+            echo "<a href='admin.php'><li>ADMIN PAGE</li></a>";
+          }
+         ?>
         <!--Logout button-->
         <form action="" method="post">
           <input class="button" type="submit" name="logout" value="Logout">

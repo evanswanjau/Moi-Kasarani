@@ -53,13 +53,20 @@
             //If they are are it returns this error
             echo '<p class="err">Some important values may have not been input<br>Event Name*<br>Regular Price*<br>Start Date*<br>Number of tickets*</p>';
           }else {
+
+            //Getting rid of apostrophe's function
+            function sql_error($string){
+              $newstring = str_replace("'", "\'", $string);
+              return $newstring;
+            }
+
             //If there are none they are assigned to the variables below
-            $event = $_POST['event'];
-            $rprice = $_POST['rprice'];
-            $vprice = $_POST['vprice'];
-            $sdate = $_POST['sdate'];
-            $edate = $_POST['edate'];
-            $tickets = $_POST['tickets'];
+            $event = sql_error($_POST['event']);
+            $rprice = sql_error($_POST['rprice']);
+            $vprice = sql_error($_POST['vprice']);
+            $sdate = sql_error($_POST['sdate']);
+            $edate = sql_error($_POST['edate']);
+            $tickets = sql_error($_POST['tickets']);
             //After beign assigned they are inserted to the database
             $sql = "INSERT INTO events (eventname, regular, vip, startdate, enddate, tickets)
                   VALUES ('$event', '$rprice', '$vprice', '$sdate', '$edate', '$tickets')";
@@ -67,7 +74,7 @@
                   if ($conn->query($sql) === TRUE) {
                     //Echo this success paragraph
                     echo "<p class='success'>Event created succesfully</p>";
-                    header('Location: events.php');
+                    header('refresh:1; url=events.php');
                   }else{
                     //If not return this error
                     echo "Error: " . $sql . "<br>" . $conn->error;
